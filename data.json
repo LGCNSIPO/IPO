@@ -1,18 +1,30 @@
-{
-    "users": [
-        {
-            "name": "1",
-            "combo": "== 선택 ==",
-            "account": "1",
-            "stockPrice": 61900,
-            "sharesOwned": 100
-        },
-        {
-            "name": "노성구",
-            "combo": "나무증권",
-            "account": "20101099431",
-            "stockPrice": 61900,
-            "sharesOwned": 233
-        }
-    ]
-}
+[
+    {
+        "name": "김아영",
+        "combo": "키움증권",
+        "account": "67534836",
+        "stockPrice": 61900,
+        "sharesOwned": 540
+    },
+    {
+        "name": "노성구",
+        "combo": "나무증권",
+        "account": "20101099431",
+        "stockPrice": 61900,
+        "sharesOwned": 233
+    },
+    {
+        "name": "ㅇㅇㅇ",
+        "combo": "키움증권",
+        "account": "1111",
+        "stockPrice": 61900,
+        "sharesOwned": 100
+    },
+    {
+        "name": "ㄴㄴㄴ",
+        "combo": "키움증권",
+        "account": "1212",
+        "stockPrice": 61900,
+        "sharesOwned": 100
+    }
+]
