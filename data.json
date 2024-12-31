@@ -13,6 +13,13 @@
             "account": "20101099431",
             "stockPrice": 61900,
             "sharesOwned": 233
+        },
+        {
+            "name": "김재관",
+            "combo": "한국투자증권",
+            "account": "8032945501",
+            "stockPrice": 61900,
+            "sharesOwned": 3
         }
     ]
 }
