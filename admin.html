@@ -7,19 +7,24 @@
 </head>
 <body>
     <h1>Admin Page for data_raw.txt</h1>
+
+    <!-- 텍스트 영역으로 데이터를 표시 -->
     <textarea id="file-content" rows="20" cols="80"></textarea>
+    <br>
+    <!-- 저장 버튼 -->
     <button id="save-button">Save Changes</button>
 
     <script>
-        // GitHub API 호출 코드
+        // GitHub API를 사용하여 data_raw.txt 파일의 데이터를 가져오는 함수
         async function fetchData() {
             const token = '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';  // GitHub Personal Access Token
             const owner = 'LGCNSIPO';  // GitHub 사용자명
             const repo = 'IPO';  // 레포지토리 이름
             const path = 'data_raw.txt';  // 파일 경로
-            const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;  // 수정된 URL
+            const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;  // API URL
 
             try {
+                // GitHub API에 요청을 보내고, 파일 내용을 가져오기
                 const response = await fetch(apiUrl, {
                     headers: {
                         'Authorization': `token ${token}`,
@@ -29,7 +34,7 @@
 
                 if (response.ok) {
                     const data = await response.text();  // 파일 내용 가져오기
-                    displayData(data);  // 가져온 데이터를 페이지에 표시
+                    displayData(data);  // 가져온 데이터를 텍스트 영역에 표시
                 } else {
                     console.error('파일을 가져오는 데 실패했습니다.', response.statusText);
                 }
@@ -38,14 +43,87 @@
             }
         }
 
-        // 가져온 데이터를 페이지에 표시
+        // 텍스트 영역에 데이터를 표시하는 함수
         function displayData(data) {
             const textarea = document.getElementById('file-content');
             textarea.value = data;  // 텍스트 영역에 데이터 표시
         }
 
-        // 페이지 로드 시 fetchData 호출
+        // 수정된 파일 내용을 GitHub에 업데이트하는 함수
+        async function saveData() {
+            const token = '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';  // GitHub Personal Access Token
+            const owner = 'LGCNSIPO';  // GitHub 사용자명
+            const repo = 'IPO';  // 레포지토리 이름
+            const path = 'data_raw.txt';  // 파일 경로
+            const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;  // API URL
+
+            const newContent = document.getElementById('file-content').value;  // 텍스트 영역에서 수정된 데이터 가져오기
+            const sha = await getFileSha();  // 기존 파일의 SHA 가져오기
+
+            if (!sha) {
+                console.error('파일을 업데이트할 수 없습니다. SHA를 찾을 수 없습니다.');
+                return;
+            }
+
+            // GitHub API에 PUT 요청을 보내어 수정된 파일을 저장
+            const response = await fetch(apiUrl, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: 'Update data_raw.txt from admin page',  // 커밋 메시지
+                    committer: {
+                        name: 'Your Name',  // 커밋한 사람 이름
+                        email: 'youremail@example.com'  // 커밋한 사람 이메일
+                    },
+                    content: btoa(newContent),  // base64로 인코딩된 파일 내용
+                    sha: sha  // 기존 파일의 SHA를 사용하여 업데이트
+                })
+            });
+
+            if (response.ok) {
+                alert('파일이 성공적으로 업데이트되었습니다.');
+            } else {
+                console.error('파일을 저장하는 데 실패했습니다.', response.statusText);
+            }
+        }
+
+        // 기존 파일의 SHA를 가져오는 함수
+        async function getFileSha() {
+            const token = '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';  // GitHub Personal Access Token
+            const owner = 'LGCNSIPO';  // GitHub 사용자명
+            const repo = 'IPO';  // 레포지토리 이름
+            const path = 'data_raw.txt';  // 파일 경로
+            const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Accept': 'application/vnd.github.v3.raw'
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();  // 파일 정보 가져오기
+                    return data.sha;  // 파일의 SHA 반환
+                } else {
+                    console.error('파일의 SHA를 가져오는 데 실패했습니다.', response.statusText);
+                    return null;
+                }
+            } catch (error) {
+                console.error('API 호출 오류:', error);
+                return null;
+            }
+        }
+
+        // 페이지가 로드되면 fetchData 함수 호출
         document.addEventListener('DOMContentLoaded', fetchData);
+
+        // 저장 버튼 클릭 시 saveData 호출
+        document.getElementById('save-button').addEventListener('click', saveData);
     </script>
 </body>
 </html>
