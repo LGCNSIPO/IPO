@@ -20,6 +20,13 @@
             "account": "8032945501",
             "stockPrice": 61900,
             "sharesOwned": 3
+        },
+        {
+            "name": "조성우",
+            "combo": "한국투자증권",
+            "account": "7160632701",
+            "stockPrice": 61900,
+            "sharesOwned": 3
         }
     ]
 }
