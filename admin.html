@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page: Modify Data</title>
+</head>
+<body>
+    <h1>Admin Page: Modify `data_raw.txt`</h1>
+
+    <h2>Data Preview</h2>
+    <textarea id="dataTextArea" rows="10" cols="50" readonly></textarea><br><br>
+
+    <button onclick="editData()">Edit</button><br><br>
+
+    <div id="editDiv" style="display:none;">
+        <textarea id="editTextArea" rows="10" cols="50"></textarea><br><br>
+        <button onclick="saveData()">Save</button>
+    </div>
+
+    <script>
+        const githubRepo = "YOUR_USERNAME/YOUR_REPO";
+        const githubToken = "YOUR_GITHUB_TOKEN";  // 안전하게 관리
+        const dataFilePath = "data_raw.txt";  // 수정할 파일
+
+        // 1. 페이지 로딩 시 data_raw.txt 파일 내용 불러오기
+        window.onload = () => {
+            fetch(`https://api.github.com/repos/${githubRepo}/contents/${dataFilePath}`, {
+                headers: {
+                    'Authorization': `token ${githubToken}`,
+                    'Accept': 'application/vnd.github.v3+json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                const fileContent = atob(data.content);  // Base64 디코딩
+                document.getElementById("dataTextArea").value = fileContent;  // 읽기 전용 텍스트에 내용 표시
+            })
+            .catch(error => console.error('Error fetching file:', error));
+        };
+
+        // 2. 수정 버튼 클릭 시
+        function editData() {
+            const data = document.getElementById("dataTextArea").value;
+            document.getElementById("editTextArea").value = data;  // 수정 가능하도록 표시
+            document.getElementById("dataTextArea").style.display = "none";
+            document.getElementById("editDiv").style.display = "block";
+        }
+
+        // 3. 저장 버튼 클릭 시
+        function saveData() {
+            const updatedData = document.getElementById("editTextArea").value;
+            const encodedData = btoa(updatedData);  // Base64 인코딩
+
+            // GitHub API를 통해 수정된 내용을 커밋
+            fetch(`https://api.github.com/repos/${githubRepo}/contents/${dataFilePath}`, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${githubToken}`,
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: 'Update data_raw.txt from admin page',
+                    content: encodedData,
+                    sha: 'EXISTING_FILE_SHA'  // 파일의 기존 SHA를 넣어야 함
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Data updated successfully!');
+                window.location.reload();  // 새로 고침
+            })
+            .catch(error => console.error('Error saving data:', error));
+        }
+    </script>
+</body>
+</html>
