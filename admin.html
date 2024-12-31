@@ -3,76 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page: Modify Data</title>
+    <title>Admin Page for data_raw.txt</title>
 </head>
 <body>
-    <h1>Admin Page: Modify `data_raw.txt`</h1>
-
-    <h2>Data Preview</h2>
-    <textarea id="dataTextArea" rows="10" cols="50" readonly></textarea><br><br>
-
-    <button onclick="editData()">Edit</button><br><br>
-
-    <div id="editDiv" style="display:none;">
-        <textarea id="editTextArea" rows="10" cols="50"></textarea><br><br>
-        <button onclick="saveData()">Save</button>
-    </div>
+    <h1>Admin Page for data_raw.txt</h1>
+    <textarea id="file-content" rows="20" cols="80"></textarea>
+    <button id="save-button">Save Changes</button>
 
     <script>
-        const githubRepo = "YOUR_USERNAME/YOUR_REPO";
-        const githubToken = "YOUR_GITHUB_TOKEN";  // 안전하게 관리
-        const dataFilePath = "data_raw.txt";  // 수정할 파일
+        // GitHub API 호출 코드
+        async function fetchData() {
+            const token = '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';  // GitHub Personal Access Token
+            const owner = 'LGCNSIPO';  // GitHub 사용자명
+            const repo = 'IPO';  // 레포지토리 이름
+            const path = 'data_raw.txt';  // 파일 경로
+            const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
 
-        // 1. 페이지 로딩 시 data_raw.txt 파일 내용 불러오기
-        window.onload = () => {
-            fetch(`https://api.github.com/repos/${githubRepo}/contents/${dataFilePath}`, {
-                headers: {
-                    'Authorization': `token ${githubToken}`,
-                    'Accept': 'application/vnd.github.v3+json'
+            try {
+                const response = await fetch(apiUrl, {
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Accept': 'application/vnd.github.v3.raw',  // 텍스트 파일 원본 가져오기
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.text();  // 파일 내용 가져오기
+                    displayData(data);  // 가져온 데이터를 페이지에 표시
+                } else {
+                    console.error('파일을 가져오는 데 실패했습니다.', response.statusText);
                 }
-            })
-            .then(response => response.json())
-            .then(data => {
-                const fileContent = atob(data.content);  // Base64 디코딩
-                document.getElementById("dataTextArea").value = fileContent;  // 읽기 전용 텍스트에 내용 표시
-            })
-            .catch(error => console.error('Error fetching file:', error));
-        };
-
-        // 2. 수정 버튼 클릭 시
-        function editData() {
-            const data = document.getElementById("dataTextArea").value;
-            document.getElementById("editTextArea").value = data;  // 수정 가능하도록 표시
-            document.getElementById("dataTextArea").style.display = "none";
-            document.getElementById("editDiv").style.display = "block";
+            } catch (error) {
+                console.error('API 호출 오류:', error);
+            }
         }
 
-        // 3. 저장 버튼 클릭 시
-        function saveData() {
-            const updatedData = document.getElementById("editTextArea").value;
-            const encodedData = btoa(updatedData);  // Base64 인코딩
-
-            // GitHub API를 통해 수정된 내용을 커밋
-            fetch(`https://api.github.com/repos/${githubRepo}/contents/${dataFilePath}`, {
-                method: 'PUT',
-                headers: {
-                    'Authorization': `token ${githubToken}`,
-                    'Accept': 'application/vnd.github.v3+json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    message: 'Update data_raw.txt from admin page',
-                    content: encodedData,
-                    sha: 'EXISTING_FILE_SHA'  // 파일의 기존 SHA를 넣어야 함
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert('Data updated successfully!');
-                window.location.reload();  // 새로 고침
-            })
-            .catch(error => console.error('Error saving data:', error));
+        // 가져온 데이터를 페이지에 표시
+        function displayData(data) {
+            const textarea = document.getElementById('file-content');
+            textarea.value = data;  // 텍스트 영역에 데이터 표시
         }
+
+        // 페이지 로드 시 fetchData 호출
+        document.addEventListener('DOMContentLoaded', fetchData);
     </script>
 </body>
 </html>
