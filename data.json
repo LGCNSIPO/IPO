@@ -27,6 +27,104 @@
             "account": "7160632701",
             "stockPrice": 61900,
             "sharesOwned": 3
+        },
+        {
+            "name": "안준연",
+            "combo": "카카오페이증권",
+            "account": "0200951757",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "전윤희",
+            "combo": "미래에셋증권",
+            "account": "220223799820",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "문철희",
+            "combo": "키움증권",
+            "account": "34790160",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "신철수",
+            "combo": "NH투자증권",
+            "account": "20600528535",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "송보현",
+            "combo": "KB증권",
+            "account": "32370909801",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "박인준",
+            "combo": "키움증권",
+            "account": "33716551",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "박상현",
+            "combo": "LS증권",
+            "account": "00501714998",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "손상준",
+            "combo": "KB증권",
+            "account": "36155400801",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "조혜미",
+            "combo": "키움증권",
+            "account": "62508810",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "박종열",
+            "combo": "키움증권",
+            "account": "32308772",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "정용재",
+            "combo": "키움증권",
+            "account": "50350448",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "최재선",
+            "combo": "토스증권",
+            "account": "16301006280",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이재덕",
+            "combo": "키움증권",
+            "account": "60844627",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이현주",
+            "combo": "미래에셋증권",
+            "account": "07699001932",
+            "stockPrice": 61900,
+            "sharesOwned": 3
         }
     ]
 }
