@@ -8,11 +8,25 @@
             "sharesOwned": 100
         },
         {
+            "name": "●후이",
+            "combo": "1",
+            "account": "1",
+            "stockPrice": 61900,
+            "sharesOwned": 1
+        },
+        {
             "name": "노성구",
             "combo": "나무증권",
             "account": "20101099431",
             "stockPrice": 61900,
             "sharesOwned": 233
+        },
+        {
+            "name": "●정현",
+            "combo": "1",
+            "account": "1",
+            "stockPrice": 61900,
+            "sharesOwned": 1
         },
         {
             "name": "김재관",
@@ -27,6 +41,13 @@
             "account": "7160632701",
             "stockPrice": 61900,
             "sharesOwned": 3
+        },
+        {
+            "name": "●아영",
+            "combo": "1",
+            "account": "1",
+            "stockPrice": 61900,
+            "sharesOwned": 1
         },
         {
             "name": "안준연",
@@ -99,6 +120,13 @@
             "sharesOwned": 3
         },
         {
+            "name": "●서민성",
+            "combo": "1",
+            "account": "1",
+            "stockPrice": 61900,
+            "sharesOwned": 1
+        },
+        {
             "name": "정용재",
             "combo": "키움증권",
             "account": "50350448",
@@ -127,6 +155,20 @@
             "sharesOwned": 3
         },
         {
+            "name": "이영기",
+            "combo": "키움증권",
+            "account": "70240636",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "●승한",
+            "combo": "1",
+            "account": "1",
+            "stockPrice": 61900,
+            "sharesOwned": 1
+        },
+        {
             "name": "김경애",
             "combo": "나무증권",
             "account": "20701611073",
@@ -144,13 +186,6 @@
             "name": "홍인호",
             "combo": "한국투자증권",
             "account": "8066702301",
-            "stockPrice": 61900,
-            "sharesOwned": 3
-        },
-        {
-            "name": "이영기",
-            "combo": "키움증권",
-            "account": "70240636",
             "stockPrice": 61900,
             "sharesOwned": 3
         }
