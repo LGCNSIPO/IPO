@@ -146,6 +146,13 @@
             "account": "8066702301",
             "stockPrice": 61900,
             "sharesOwned": 3
+        },
+        {
+            "name": "이영기",
+            "combo": "키움증권",
+            "account": "70240636",
+            "stockPrice": 61900,
+            "sharesOwned": 3
         }
     ]
 }
