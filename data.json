@@ -125,6 +125,27 @@
             "account": "07699001932",
             "stockPrice": 61900,
             "sharesOwned": 3
+        },
+        {
+            "name": "김경애",
+            "combo": "나무증권",
+            "account": "20701611073",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "김지연",
+            "combo": "삼성증권",
+            "account": "707947792201",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "홍인호",
+            "combo": "한국투자증권",
+            "account": "8066702301",
+            "stockPrice": 61900,
+            "sharesOwned": 3
         }
     ]
 }
