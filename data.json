@@ -195,6 +195,41 @@
             "account": "8066702301",
             "stockPrice": 61900,
             "sharesOwned": 3
+        },
+        {
+            "name": "●바오",
+            "combo": "1",
+            "account": "1",
+            "stockPrice": 61900,
+            "sharesOwned": 1
+        },
+        {
+            "name": "정우택",
+            "combo": "키움증권",
+            "account": "40240412",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "양준열",
+            "combo": "토스증권",
+            "account": "14401032019",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "손재웅",
+            "combo": "토스증권",
+            "account": "19301011634",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "박정수",
+            "combo": "NH투자증권",
+            "account": "3021975129741",
+            "stockPrice": 61900,
+            "sharesOwned": 3
         }
     ]
 }
