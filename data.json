@@ -279,6 +279,62 @@
             "account": "02007801251",
             "stockPrice": 61900,
             "sharesOwned": 3
+        },
+        {
+            "name": "●기형",
+            "combo": "1",
+            "account": "1",
+            "stockPrice": 61900,
+            "sharesOwned": 1
+        },
+        {
+            "name": "오영식",
+            "combo": "토스증권",
+            "account": "14801007474",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이정도",
+            "combo": "대신증권",
+            "account": "703135597",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "김지안",
+            "combo": "토스증권",
+            "account": "100140418985",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "석영수",
+            "combo": "삼성증권",
+            "account": "2803302301",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "김수장",
+            "combo": "미래에셋증권",
+            "account": "400730156360",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "임명진",
+            "combo": "키움증권",
+            "account": "31392883",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "권성호",
+            "combo": "삼성증권",
+            "account": "2839830401",
+            "stockPrice": 61900,
+            "sharesOwned": 28
         }
     ]
 }
