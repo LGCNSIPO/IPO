@@ -258,6 +258,27 @@
             "account": "3021975129741",
             "stockPrice": 61900,
             "sharesOwned": 3
+        },
+        {
+            "name": "김대식",
+            "combo": "키움증권",
+            "account": "57978466",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "김종훈",
+            "combo": "삼성증권",
+            "account": "20101529380",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "양효진",
+            "combo": "카카오페이증권",
+            "account": "02007801251",
+            "stockPrice": 61900,
+            "sharesOwned": 3
         }
     ]
 }
