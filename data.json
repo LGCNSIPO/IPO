@@ -288,6 +288,27 @@
             "sharesOwned": 3
         },
         {
+            "name": "이명환",
+            "combo": "NH투자증권",
+            "account": "01801229165",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "김진용",
+            "combo": "NH투자증권",
+            "account": "20501808121",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "한철근",
+            "combo": "나무증권",
+            "account": "20201316505",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
             "name": "●기형",
             "combo": "1",
             "account": "1",
