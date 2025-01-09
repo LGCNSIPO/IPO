@@ -162,6 +162,13 @@
             "sharesOwned": 3
         },
         {
+            "name": "공계자",
+            "combo": "삼성증권",
+            "account": "712636621314",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
             "name": "●서민성",
             "combo": "1",
             "account": "1",
