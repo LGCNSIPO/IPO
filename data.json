@@ -155,6 +155,13 @@
             "sharesOwned": 3
         },
         {
+            "name": "한상환",
+            "combo": "대신증권",
+            "account": "420106018",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
             "name": "●서민성",
             "combo": "1",
             "account": "1",
@@ -340,6 +347,20 @@
             "name": "한철근",
             "combo": "나무증권",
             "account": "20201316505",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이동숙",
+            "combo": "삼성증권",
+            "account": "4893806001",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이춘삼",
+            "combo": "한국투자증권",
+            "account": "6320623901",
             "stockPrice": 61900,
             "sharesOwned": 3
         },
