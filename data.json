@@ -8,6 +8,13 @@
             "sharesOwned": 100
         },
         {
+            "name": "2",
+            "combo": "== 선택 ==",
+            "account": "2",
+            "stockPrice": 61900,
+            "sharesOwned": 200
+        },
+        {
             "name": "●후이",
             "combo": "1",
             "account": "1",
