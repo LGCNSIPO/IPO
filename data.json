@@ -253,6 +253,27 @@
             "sharesOwned": 3
         },
         {
+            "name": "조방연",
+            "combo": "NH투자증권",
+            "account": "00601211136",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "윤형관",
+            "combo": "한국투자증권",
+            "account": "6830543601",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "박재천",
+            "combo": "NH투자증권",
+            "account": "20201293187",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
             "name": "●승한",
             "combo": "1",
             "account": "1",
@@ -396,6 +417,13 @@
             "name": "김종택",
             "combo": "NH투자증권",
             "account": "20001418091",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "김성철",
+            "combo": "NH투자증권",
+            "account": "20301473581",
             "stockPrice": 61900,
             "sharesOwned": 3
         },
