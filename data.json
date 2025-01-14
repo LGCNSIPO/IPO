@@ -463,6 +463,20 @@
             "sharesOwned": 3
         },
         {
+            "name": "강미란",
+            "combo": "키움증권",
+            "account": "51118808",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
+            "name": "김익태",
+            "combo": "미래에셋증권",
+            "account": "010741052820",
+            "stockPrice": 61900,
+            "sharesOwned": 3
+        },
+        {
             "name": "김수장",
             "combo": "미래에셋증권",
             "account": "400730156360",
